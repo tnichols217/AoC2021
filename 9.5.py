@@ -17,7 +17,7 @@ def spread(A, id, i, j):
             spread(A, id, m, j)
         if A[n][j] == 0:
             spread(A, id, n, j)
-            
+
 [[spread(b, i*c + j + 1, i, j) for j in range(len(b[i]))] for i in range(len(b))]
 d = np.sort(np.bincount([i if i > 0 else 0 for i in b.flatten()])[1:])
 print(np.prod(d[-3:]))
